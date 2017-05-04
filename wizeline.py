@@ -45,7 +45,10 @@ def numberToName(N):
                     name += ", "
                 elif name != "" and factor == 10:
                     name += " and "
-                name += mapping[aux] + space + mapping[factor]
+                if factor == 10:
+                    name += mapping[aux * factor]
+                else:
+                    name += mapping[aux] + space + mapping[factor]
             N = N % factor
         else:
             factor = factor / 10
@@ -53,4 +56,4 @@ def numberToName(N):
                 name += mapping[N]
     return name
 
-print numberToName(9856)
+print numberToName(8732)
