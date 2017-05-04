@@ -6,9 +6,8 @@ def anagram(word):
         words = line.split(" ")
         for w in words:
             if len(w) == len(word):
-                for i in xrange(len(w)):
-                    if verify_anagram(w, word):
-                        anagrams.append(w)
+                if verify_anagram(w, word):
+                    anagrams.append(w)
     return anagrams
 
 
